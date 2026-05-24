@@ -11,10 +11,10 @@ export default function BottomNavBar({
   onTabChange,
 }: BottomNavBarProps) {
   const navItems = [
-    { id: "Home" as TabType, label: "Home", icon: Home },
-    { id: "Search" as TabType, label: "Search", icon: Search },
-    { id: "Orders" as TabType, label: "Orders", icon: ReceiptText },
-    { id: "Profile" as TabType, label: "Profile", icon: User },
+    { id: "Home" as TabType, label: "首页", icon: Home },
+    { id: "Search" as TabType, label: "菜单", icon: Search },
+    { id: "Orders" as TabType, label: "订单", icon: ReceiptText },
+    { id: "Profile" as TabType, label: "我的", icon: User },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import { ShoppingCart, ArrowRight } from "lucide-react";
+import { ArrowRight, ShoppingCart } from "lucide-react";
 
 interface CartFloatingBarProps {
   itemCount: number;
@@ -15,7 +15,7 @@ export default function CartFloatingBar({
 }: CartFloatingBarProps) {
   if (itemCount === 0) return null;
 
-  const formattedPrice = subtotal.toFixed(2);
+  const formattedPrice = `¥${subtotal.toFixed(2)}`;
 
   if (variant === "merchant") {
     return (
@@ -33,10 +33,10 @@ export default function CartFloatingBar({
             </div>
             <div>
               <p className="text-[10px] font-sans font-semibold tracking-wider text-white/85 uppercase">
-                {itemCount} {itemCount === 1 ? "Item" : "Items"} added
+                已加入 {itemCount} 件商品
               </p>
               <p className="font-display font-bold text-lg leading-tight">
-                ${formattedPrice}
+                {formattedPrice}
               </p>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function CartFloatingBar({
             }}
             className="bg-white text-primary hover:bg-surface-bright font-sans font-bold text-sm px-5 py-2.5 rounded-xl flex items-center gap-1.5 active:scale-95 transition-all shadow-sm shrink-0 cursor-pointer"
           >
-            Go to Checkout
+            去结算
             <ArrowRight className="w-4 h-4 text-primary shrink-0" />
           </button>
         </div>
@@ -55,7 +55,6 @@ export default function CartFloatingBar({
     );
   }
 
-  // Home Screen variant (floats above bottom navigation, hence bottom-24 is perfect)
   return (
     <div className="fixed bottom-[88px] left-0 w-full px-4 z-30 pointer-events-none">
       <div className="max-w-md mx-auto">
@@ -68,10 +67,10 @@ export default function CartFloatingBar({
               {itemCount}
             </div>
             <span className="font-sans font-bold text-sm tracking-wide">
-              View Cart
+              查看购物车
             </span>
           </div>
-          <span className="font-sans font-bold text-sm">${formattedPrice}</span>
+          <span className="font-sans font-bold text-sm">{formattedPrice}</span>
         </button>
       </div>
     </div>
