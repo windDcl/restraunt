@@ -1,0 +1,6 @@
+{
+  "name": "GourmetGo",
+  "description": "GourmetGo is a premium food delivery application with seamless restaurant discovery, custom curation, interactive menus, cart management, and profile history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
